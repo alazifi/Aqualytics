@@ -4,6 +4,8 @@
 
 TDS tdsSensor(32, 3300, 4095);
 
+String endChar = "\xFF\xFF\xFF";
+
 // bool start = false;
 // bool save = false;
 
@@ -42,6 +44,12 @@ TDS tdsSensor(32, 3300, 4095);
 //   dtostrf(tempVal, 2, 1, tempValue);
 //   tTemp.setText(tempValue);
 // }
+
+void bUpdateTemp(float tempVal){
+  static char tempValue[6];
+  dtostrf(tempVal, 2, 1, tempValue);
+  Serial2.print("tTemp.txt=\""+String(tempValue)+"\""+endChar);
+}
 
 // void bUpdateTDS(int TDSVal){
 //   static char TDSValue[6];
@@ -102,7 +110,10 @@ void setup(){
 
 void loop(){
   tdsSensor.run();
-  // tdsSensor.getAllTDSData();
+  tdsSensor.setTemperature(27.3);
+  tdsSensor.getAllTDSData();
+  bUpdateTemp(tdsSensor.getTemperature());
+  delay(1000);
   // bUpdateTemp(tdsSensor.getTemperature());
   // bUpdateTDS(tdsSensor.getTDS());
   // bUpdateEC(tdsSensor.getEC());
