@@ -97,15 +97,6 @@ void setup(){
   nexInit();
   tdsSensor.setTemperature(25.3);
   tdsSensor.begin();
-  // bUpdateTemp(tdsSensor.getTemperature());
-  // bUpdateTDS(tdsSensor.getTDS());
-  // bUpdateEC(tdsSensor.getEC());
-  // bUpdateRes(tdsSensor.getResistivity());
-  // bUpdateSalt(tdsSensor.getSalinity());
-  // bUpdateVpH(tdsSensor.voltageTDS());
-  // bUpdateVTDS(tdsSensor.voltageTDS());
-  // bUpdateK(tdsSensor.getKvalue());
-  // bUpdateVDO(tdsSensor.voltageTDS());
 }
 
 void loop(){
