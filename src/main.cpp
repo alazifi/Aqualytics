@@ -112,15 +112,15 @@ void loop(){
   tdsSensor.setTemperature(27.65);
   tdsSensor.run();
   delay(200);
-  //tdsSensor.getAllTDSData();
-  //bUpdateTemp(tdsSensor.getTemperature());
-  // bUpdateTDS(tdsSensor.getTDS());
-  // bUpdateEC(tdsSensor.getEC());
-  // bUpdateRes(tdsSensor.getResistivity());
-  // bUpdateSalt(tdsSensor.getSalinity());
-  // bUpdateVpH(tdsSensor.voltageTDS());
-  // bUpdateVTDS(tdsSensor.voltageTDS());
-  // bUpdateK(tdsSensor.getKvalue());
-  // bUpdateVDO(tdsSensor.voltageTDS());
-  // nexLoop(nex_listen_list);
+  tdsSensor.getAllTDSData();
+  bUpdateTemp(tdsSensor.getTemperature());
+  bUpdateTDS(tdsSensor.getTDS());
+  bUpdateEC(tdsSensor.getEC());
+  bUpdateRes(tdsSensor.getResistivity());
+  bUpdateSalt(tdsSensor.getSalinity());
+  bUpdateVpH(tdsSensor.voltageTDS());
+  bUpdateVTDS(tdsSensor.voltageTDS());
+  bUpdateK(tdsSensor.getKvalue());
+  bUpdateVDO(tdsSensor.voltageTDS());
+  nexLoop(nex_listen_list);
 }
