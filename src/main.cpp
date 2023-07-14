@@ -19,10 +19,6 @@ void bUpdateTemp(float tempVal)
   static char tempValue[6];
   dtostrf(tempVal, 2, 1, tempValue);
   Serial2.print("tTemp.txt=\"" + String(tempValue) + "\"" + endChar);
-  // Serial2.print("tTemp.txt=\""+String(tempValue)+"\"");
-  // Serial2.write(0xff);
-  // Serial2.write(0xff);
-  // Serial2.write(0xff);
 }
 
 void bUpdateTDS(int TDSVal)
@@ -31,10 +27,6 @@ void bUpdateTDS(int TDSVal)
   // dtostrf(TDSVal, 6, 2, TDSValue);
   itoa(TDSVal, TDSValue, 10);
   Serial2.print("tTDS.txt=\"" + String(TDSValue) + "\"" + endChar);
-  // Serial2.print("tTDS.txt=\""+String(TDSValue)+"\"");
-  // Serial2.write(0xff);
-  // Serial2.write(0xff);
-  // Serial2.write(0xff);
 }
 
 void bUpdateEC(int ECVal)
@@ -90,9 +82,8 @@ void bUpdateVDO(float vDOVal)
 void loop()
 {
   tdsSensor.run();
-  tdsSensor.setTemperature(25.7);
-  tdsSensor.getAllTDSData();
-
+  tdsSensor.setTemperature(28.8);
+  
   unsigned long currentTime = millis();
 
   if (currentTime - previousTime >= 500)
