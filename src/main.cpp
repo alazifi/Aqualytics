@@ -1,7 +1,13 @@
 #include <Arduino.h>
 #include <TDS.h>
 
-TDS tdsSensor(32, 3300, 4095);
+#define TDS_PIN 32
+#define DO_PIN 34
+
+#define V_REFERENCE 3300
+#define A_REFERENCE 4095
+
+TDS tdsSensor(TDS_PIN, V_REFERENCE, A_REFERENCE);
 
 String endChar = "\xFF\xFF\xFF";
 
